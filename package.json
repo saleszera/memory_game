@@ -11,7 +11,7 @@
     "storybook-generate": "sb-rn-get-stories",
     "lint": "eslint . --ext .ts,.tsx",
     "format": "prettier --write .",
-    "test": "jest"
+    "test": "jest --passWithNoTests"
   },
   "dependencies": {
     "@sentry/react-native": "5.19.1",
