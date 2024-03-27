@@ -16,17 +16,12 @@ export default (): Record<string, unknown> => ({
       backgroundColor: '#FFF9EF',
     },
     assetBundlePatterns: ['**/*'],
-    ios: {
-      supportsTablet: true,
-    },
     android: {
+      package: 'com.memory.game',
       adaptiveIcon: {
         foregroundImage: './assets/adaptive-icon.png',
         backgroundColor: '#FFF9EF',
       },
-    },
-    web: {
-      favicon: './assets/favicon.png',
     },
     plugins: [
       [
@@ -38,7 +33,16 @@ export default (): Record<string, unknown> => ({
       ],
     ],
     extra: {
-      sentryDsn: process.env.SENTRY_DSN,
+      sentryDsn: process.env.EXPO_PUBLIC_SENTRY_DSN,
+      eas: {
+        projectId: 'ef4e5878-c63b-414c-8fe4-9ae7c7adc67c',
+      },
+    },
+    updates: {
+      url: 'https://u.expo.dev/ef4e5878-c63b-414c-8fe4-9ae7c7adc67c',
+    },
+    runtimeVersion: {
+      policy: 'appVersion',
     },
   },
 });
