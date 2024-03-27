@@ -1,17 +1,19 @@
-import 'dotenv/config';
-
 export default (): Record<string, unknown> => ({
   expo: {
     name: 'memry-game',
     slug: 'memry-game',
     version: '1.0.0',
+    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
+    entryPoint: process.env.STORYBOOK_ENABLED
+      ? 'index.storybook.js'
+      : 'node_modules/expo/AppEntry.js',
     orientation: 'portrait',
     icon: './assets/icon.png',
     userInterfaceStyle: 'light',
     splash: {
       image: './assets/splash.png',
       resizeMode: 'contain',
-      backgroundColor: '#ffffff',
+      backgroundColor: '#FFF9EF',
     },
     assetBundlePatterns: ['**/*'],
     ios: {
@@ -20,7 +22,7 @@ export default (): Record<string, unknown> => ({
     android: {
       adaptiveIcon: {
         foregroundImage: './assets/adaptive-icon.png',
-        backgroundColor: '#ffffff',
+        backgroundColor: '#FFF9EF',
       },
     },
     web: {
