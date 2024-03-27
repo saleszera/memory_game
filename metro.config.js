@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 // Learn more https://docs.expo.io/guides/customizing-metro
+const { getSentryExpoConfig } = require('@sentry/react-native/metro');
 const { generate } = require('@storybook/react-native/scripts/generate');
 const { getDefaultConfig } = require('expo/metro-config');
 const path = require('path');
@@ -10,6 +11,8 @@ generate({
 
 /** @type {import('expo/metro-config').MetroConfig} */
 const config = getDefaultConfig(__dirname);
+
+const sentryConfig = getSentryExpoConfig(__dirname);
 
 config.transformer.unstable_allowRequireContext = true;
 
@@ -34,4 +37,4 @@ config.resolver.resolveRequest = (context, moduleName, platform) => {
   return defaultResolveResult;
 };
 
-module.exports = config;
+module.exports = { ...config, ...sentryConfig };
