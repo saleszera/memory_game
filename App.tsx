@@ -1,7 +1,9 @@
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
 
 import * as Sentry from '@sentry/react-native';
-import { StatusBar } from 'expo-status-bar';
+import { withExpoSnack } from 'nativewind';
+
+import { Game } from './src';
 
 if (process.env.NODE_ENV === 'production') {
   Sentry.init({
@@ -9,20 +11,6 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-export default function App(): JSX.Element {
-  return (
-    <View style={styles.container}>
-      <Text>Hello world</Text>
-      <StatusBar style='dark' />
-    </View>
-  );
-}
+const App = (): JSX.Element => <Game />;
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default withExpoSnack(App);

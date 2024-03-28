@@ -11,12 +11,14 @@
     "storybook-generate": "sb-rn-get-stories",
     "lint": "eslint . --ext .ts,.tsx",
     "format": "prettier --write .",
-    "test": "jest --passWithNoTests"
+    "test": "jest --passWithNoTests",
+    "storybook": "STORYBOOK_ENABLED='true' expo start"
   },
   "dependencies": {
     "@sentry/react-native": "5.19.1",
     "expo": "~50.0.14",
     "expo-status-bar": "~1.11.1",
+    "expo-updates": "~0.24.12",
     "nativewind": "^2.0.11",
     "react": "18.2.0",
     "react-native": "0.73.6"
