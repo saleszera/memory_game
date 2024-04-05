@@ -203,7 +203,7 @@ const elements = {
             content: [
               'Por e-mail: raniery@saleszera.com',
               'Telefone: +55 12 98268-5523',
-              'Ao visitar esta página: https://saleszera.blogspot.com',
+              'Ao visitar esta página: https://github.com/saleszera/memory_game/issues',
             ],
           },
         ],
