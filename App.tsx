@@ -1,7 +1,8 @@
+import './global.css';
+
 import React from 'react';
 
 import * as Sentry from '@sentry/react-native';
-import { withExpoSnack } from 'nativewind';
 
 import { Game } from './src';
 
@@ -13,4 +14,4 @@ if (process.env.NODE_ENV === 'production') {
 
 const App = (): JSX.Element => <Game />;
 
-export default withExpoSnack(App);
+export default App;
