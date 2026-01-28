@@ -4,7 +4,7 @@ export default (): Record<string, unknown> => ({
   expo: {
     name: 'memry-game',
     slug: 'memry-game',
-    version: '1.0.0',
+    version: '1.1.0',
     // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
     entryPoint: process.env.STORYBOOK_ENABLED
       ? 'index.storybook.js'
